@@ -1,0 +1,108 @@
+/* ---- Variables: define your colors in one place ---- */
+:root {
+  --bg: #f7f7f7;
+  --text: #222222;
+  --header-bg: #2c3e50;
+  --header-text: #ffffff;
+  --link: #3498db;
+  --accent: #2980b9;
+}
+
+body.dark-mode {
+  --bg: #1e1e1e;
+  --text: #e6e6e6;
+  --header-bg: #0f0f0f;
+  --header-text: #ffffff;
+  --link: #6fa5d3;
+  --accent: #4a90c4;
+}
+
+/* ---- Reset: remove the browser's default spacing ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- Body: font, background, text color ---- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---- Header: the top bar ---- */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+header nav ul {
+  list-style: none;       /* remove the bullet points from <ul> */
+  display: flex;          /* lay out the <li> items in a row */
+  gap: 1rem;              /* space between them */
+}
+
+header a {
+  color: var(--header-text);
+  text-decoration: none;  /* remove the underline from links */
+}
+
+header a:hover {
+  text-decoration: underline; /* underline when hovering over a link */
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;        /* show the pointer hand over the button */
+}
+
+/* ---- Main content ---- */
+main {
+  max-width: 800px;       /* page doesn't get too wide on big screens */
+  margin: 2rem auto;      /* centered, with some space above and below */
+  padding: 0 1rem;        /* small gap from the edges on small screens */
+}
+
+section {
+  margin-bottom: 2rem;    /* space between sections */
+}
+
+section h2 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);   /* section headings in the accent color */
+}
+
+section p {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--link);     /* links in the link color */
+}
+
+ul li {
+  margin-left: 1.2rem;    /* indent list items a bit */
+  margin-bottom: 0.3rem;
+}
+
+/* ---- Responsive: stack the header items on small screens ---- */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
