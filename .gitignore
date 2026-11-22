@@ -1,0 +1,9 @@
+# OS
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+
+# Dependencies (later)
+node_modules/
