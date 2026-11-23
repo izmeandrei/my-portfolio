@@ -119,7 +119,8 @@ a:hover {
   text-decoration-thickness: 2px; /* underline thickens on hover */
 }
 
-ul li {
+/* Scope to main so the nav links keep only their gap spacing */
+main ul li {
   margin-left: 1.2rem;    /* indent list items a bit */
   margin-bottom: 0.3rem;
 }
