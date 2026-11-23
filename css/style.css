@@ -1,20 +1,20 @@
-/* ---- Variables: define your colors in one place ---- */
+/* ---- Variables: monochrome palette, defined in one place ---- */
 :root {
-  --bg: #f7f7f7;
-  --text: #222222;
-  --header-bg: #2c3e50;
-  --header-text: #ffffff;
-  --link: #3498db;
-  --accent: #2980b9;
+  --bg: #fafafa;
+  --text: #171717;
+  --header-bg: #111111;
+  --header-text: #fafafa;
+  --link: #404040;
+  --accent: #262626;
 }
 
 body.dark-mode {
-  --bg: #1e1e1e;
-  --text: #e6e6e6;
-  --header-bg: #0f0f0f;
-  --header-text: #ffffff;
-  --link: #6fa5d3;
-  --accent: #4a90c4;
+  --bg: #0f0f0f;
+  --text: #ededed;
+  --header-bg: #000000;
+  --header-text: #fafafa;
+  --link: #d4d4d4;
+  --accent: #e5e5e5;
 }
 
 /* ---- Reset: remove the browser's default spacing ---- */
@@ -54,11 +54,17 @@ header nav ul {
 
 header a {
   color: var(--header-text);
-  text-decoration: none;  /* remove the underline from links */
+  text-decoration: underline;
+  /* faint underline always hints at the link, then brightens on hover/focus */
+  text-decoration-color: color-mix(in srgb, var(--header-text) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 
-header a:hover {
-  text-decoration: underline; /* underline when hovering over a link */
+header a:hover,
+header a:focus-visible {
+  text-decoration-color: var(--header-text);
+  text-decoration-thickness: 2px;
 }
 
 #theme-toggle {
@@ -68,6 +74,19 @@ header a:hover {
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   cursor: pointer;        /* show the pointer hand over the button */
+}
+
+/* Invert the button on hover so the change is obvious */
+#theme-toggle:hover {
+  background-color: var(--header-text);
+  color: var(--header-bg);
+}
+
+/* Keyboard focus: always visible and follows the current text color */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
 }
 
 /* ---- Main content ---- */
@@ -92,6 +111,12 @@ section p {
 
 a {
   color: var(--link);     /* links in the link color */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px; /* underline thickens on hover */
 }
 
 ul li {
