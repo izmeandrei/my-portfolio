@@ -148,4 +148,9 @@ main ul li {
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
