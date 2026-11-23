@@ -32,6 +32,23 @@ body {
   line-height: 1.6;
 }
 
+/* ---- Skip link: hidden until it receives keyboard focus ---- */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  border-radius: 0 0 4px 4px;
+  text-decoration: underline;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* ---- Header: the top bar ---- */
 header {
   background-color: var(--header-bg);

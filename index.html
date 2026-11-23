@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header>
     <h1>Andrei Brosas</h1>
     <nav>
@@ -18,10 +20,10 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <button id="theme-toggle" type="button">Dark mode</button>
+    <button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section id="about">
       <h2>About me</h2>
       <p>Hi! I'm Andrei. I'm learning web development and building my first website from scratch with HTML, CSS and JavaScript.</p>

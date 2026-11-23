@@ -31,21 +31,20 @@ if (startInDark) {
   body.classList.add("dark-mode");
 }
 
-// 4. Function: set the button text to match the current mode
-function updateButtonLabel() {
-  if (body.classList.contains("dark-mode")) {
-    themeToggle.textContent = "Switch to light mode";
-  } else {
-    themeToggle.textContent = "Switch to dark mode";
-  }
+// 4. Keep the label and pressed state in sync with the current mode
+function updateToggleState() {
+  const isDark = body.classList.contains("dark-mode");
+  themeToggle.textContent = isDark ? "Switch to light mode" : "Switch to dark mode";
+  // aria-pressed tells assistive tech whether dark mode is currently on
+  themeToggle.setAttribute("aria-pressed", String(isDark));
 }
 
 // 5. When the button is clicked: flip the mode, remember it, update the label
 themeToggle.addEventListener("click", function () {
   body.classList.toggle("dark-mode");
   saveTheme(body.classList.contains("dark-mode") ? "dark" : "light");
-  updateButtonLabel();
+  updateToggleState();
 });
 
 // 6. Set the correct label right away when the page loads
-updateButtonLabel();
+updateToggleState();
